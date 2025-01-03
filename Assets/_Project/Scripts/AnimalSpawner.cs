@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class AnimalSpawner : MonoBehaviour
 {
     public List<GameObject> Animals; //몬스터 프리팹 리스트
-    private int spawnCount = 10;
-    private Vector3 monsterPos;
+    private float spawnRadius = 40f;
+    public Transform spawnAreaCenter;
+
     private void Start()
     {
         StartCoroutine(MonsterSpawnRoop());
@@ -19,14 +21,29 @@ public class AnimalSpawner : MonoBehaviour
         
         while (true)
         {
-            float x = Random.Range(-5, 5);
-            float y = Random.Range(-5, 5);
-            float z = Random.Range(-5, 5);
+            Vector3 spawnPos = GetRandomPostion(spawnAreaCenter.position, spawnRadius);
+            if (spawnPos != Vector3.zero)
+            {
+                print("랜덤 위치에 몬스터 생성");
+                Instantiate(Animals[Random.Range(0, Animals.Count)], spawnPos, Quaternion.identity);
+                
+            }
             
-            monsterPos = new Vector3(x,y,z);
-            Instantiate(Animals[Random.Range(0, Animals.Count)], monsterPos, Quaternion.identity);
-            
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(20f);
         }
     }
+
+    private Vector3 GetRandomPostion(Vector3 center, float radius)
+    {
+        Vector3 randomPos = center + Random.insideUnitSphere * radius;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPos, out hit, radius, NavMesh.AllAreas))
+        {
+            print("유효한 위치 찾음");
+            return hit.position;
+        }
+        print("유효한 위치를 찾을 수 없음");
+        return Vector3.zero;
+    }
+    
 }
