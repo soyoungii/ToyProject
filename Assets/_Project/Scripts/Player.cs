@@ -53,6 +53,13 @@ public class Player : MonoBehaviour
             cancelButton.gameObject.SetActive(false);
             burgerCount--;
             gold += 500;
+
+            if(burgers.Count > 0)
+            {
+                GameObject removeBurger = burgers[burgers.Count - 1];
+                burgers.RemoveAt(burgers.Count - 1);
+                Destroy(removeBurger);
+            }
         }
         else
         {
@@ -100,14 +107,11 @@ public class Player : MonoBehaviour
     { 
         if (xrOrigin != null && characterController != null)
         {
-            // 카메라의 현재 높이를 가져옵니다.
             float cameraHeight = xrOrigin.CameraInOriginSpaceHeight;
 
-            // Character Controller의 높이 및 중심을 동기화합니다.
             characterController.height = cameraHeight;
             characterController.center = new Vector3(0, cameraHeight / 2, 0);
 
-            // XR Origin의 위치를 보정합니다.
             Vector3 adjustedPosition = xrOrigin.transform.position;
             adjustedPosition.y += cameraHeight / 2;
             xrOrigin.transform.position = adjustedPosition;

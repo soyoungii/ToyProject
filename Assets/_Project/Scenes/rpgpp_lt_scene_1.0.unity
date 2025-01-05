@@ -4723,6 +4723,7 @@ MonoBehaviour:
   huntCount: 0
   burgerCount: 0
   gold: 0
+  burgers: []
   sellButton: {fileID: 1833330986}
   okButton: {fileID: 1870806179}
   cancelButton: {fileID: 1283246860}
@@ -8177,7 +8178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7166699213319794399, guid: e794c7e0ecaac48cc822b755638fd4d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.983
+      value: 7.86
       objectReference: {fileID: 0}
     - target: {fileID: 7166699213319794399, guid: e794c7e0ecaac48cc822b755638fd4d1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9558,6 +9559,7 @@ GameObject:
   - component: {fileID: 1283246859}
   - component: {fileID: 1283246858}
   - component: {fileID: 1283246860}
+  - component: {fileID: 1283246861}
   m_Layer: 5
   m_Name: No
   m_TagString: Untagged
@@ -9667,6 +9669,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1283246861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283246856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b3638c2f5db5b479ff24c2859713d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PokeFollowTransform: {fileID: 1283246857}
+  m_SmoothingSpeed: 16
+  m_ReturnToInitialPosition: 1
+  m_ApplyIfChildIsTarget: 1
+  m_ClampToMaxDistance: 0
+  m_MaxDistance: 0
 --- !u!1001 &1291804593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14644,6 +14664,7 @@ GameObject:
   - component: {fileID: 1833330985}
   - component: {fileID: 1833330984}
   - component: {fileID: 1833330986}
+  - component: {fileID: 1833330987}
   m_Layer: 5
   m_Name: Sell
   m_TagString: Untagged
@@ -14753,6 +14774,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1833330987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833330982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b3638c2f5db5b479ff24c2859713d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PokeFollowTransform: {fileID: 1833330983}
+  m_SmoothingSpeed: 16
+  m_ReturnToInitialPosition: 1
+  m_ApplyIfChildIsTarget: 1
+  m_ClampToMaxDistance: 0
+  m_MaxDistance: 0
 --- !u!1 &1870599173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1498041528017854, guid: 0ba258545da721e488ecb71ffd143b6f, type: 3}
@@ -14792,6 +14831,7 @@ GameObject:
   - component: {fileID: 1870806178}
   - component: {fileID: 1870806177}
   - component: {fileID: 1870806179}
+  - component: {fileID: 1870806180}
   m_Layer: 5
   m_Name: Yes
   m_TagString: Untagged
@@ -14901,6 +14941,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1870806180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870806175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b3638c2f5db5b479ff24c2859713d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PokeFollowTransform: {fileID: 1870806176}
+  m_SmoothingSpeed: 16
+  m_ReturnToInitialPosition: 1
+  m_ApplyIfChildIsTarget: 1
+  m_ClampToMaxDistance: 0
+  m_MaxDistance: 0
 --- !u!1001 &1884455553
 PrefabInstance:
   m_ObjectHideFlags: 0

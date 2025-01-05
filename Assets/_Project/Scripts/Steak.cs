@@ -39,8 +39,8 @@ public class Steak : MonoBehaviour
         ParticleSystem getBurger = Instantiate(getPrefab, transform.position, Quaternion.identity);
         getBurger.Play();
         Destroy(getBurger.gameObject, 2f);
-        Instantiate(burgerPrefab, transform.position, Quaternion.identity);
-        player.burgers.Add(burgerPrefab);
+        GameObject newBurger = Instantiate(burgerPrefab, transform.position, Quaternion.identity);
+        player.burgers.Add(newBurger);
         print("버거 획득");
     }
 }
